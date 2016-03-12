@@ -3,8 +3,7 @@ module.exports = function(config) {
     basePath: '',
     frameworks: ['jasmine'],
     files: [
-      'node_modules/video.js/dist/video.js',
-      'src/Youtube.js',
+      'build/js/video.ytbundle.min.js',
       'tests/**/*.specs.js'
     ],
     browsers: ['Chrome'],

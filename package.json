@@ -10,9 +10,6 @@
     "test": "karma start --single-run",
     "validate": "npm ls"
   },
-  "pre-commit": [
-    "lint"
-  ],
   "dependencies": {
     "video.js": "^5.6.0"
   },
@@ -36,7 +33,6 @@
     "karma-chrome-launcher": "^0.2.0",
     "karma-jasmine": "^0.3.6",
     "mkdirp": "^0.5.1",
-    "precommit-hook": "^3.0.0",
     "uglify-js": "^2.4.23"
   },
   "peerDependencies": {
