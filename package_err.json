@@ -1,0 +1,62 @@
+{
+  "name": "videojs5-you-bundle",
+  "version": "0.0.1",
+  "description": "Just a gulp+browserify videojs and youtube bundling",
+  "main": "index.js",
+  "author": "Jack Liou <jkliou@gmail.com>",
+  "license": "WTFPL",
+  "scripts": {
+    "lint": "jshint .",
+    "test": "karma start --single-run",
+    "validate": "npm ls"
+  },
+  "pre-commit": [
+    "lint"
+  ],
+  "dependencies": {
+    "video.js": "^5.6.0"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.6.4",
+    "browserify": "^9.0.8",
+    "browserify-shim": "^3.8.5",
+    "bundle-collapser": "^1.2.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.5.3",
+    "gulp-util": "^3.0.4",
+    "vinyl-source-stream": "^1.1.0",
+    
+    "http-server": "^0.8.0",
+    "jasmine-core": "^2.3.4",
+    "jshint": "^2.8.0",
+    "karma": "^0.12.37",
+    "karma-chrome-launcher": "^0.2.0",
+    "karma-jasmine": "^0.3.6",
+    "mkdirp": "^0.5.1",
+    "precommit-hook": "^3.0.0",
+    "uglify-js": "^2.4.23"
+  },
+  "peerDependencies": {
+    "video.js": "5.x"
+  },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
+  "browser": {
+    "videojs/video-js": "./node_modules/video.js/dist/video.js",
+    "videojs-youtube": "./src/Youtube.js"
+  },
+  "browserify-shim": {
+    // jk: error, not necessary
+    "videojs-youtube": {
+      "depends": [
+        "videojs/video-js:videojs"
+      ]
+    }
+  }
+}
